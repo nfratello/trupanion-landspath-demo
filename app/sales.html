@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sales — Pipeline & Vet Onboarding</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Sales — Pipeline & Vet Onboarding</div>
+          <div class="small">New vet clinic acquisition, onboarding pipeline, and territory assignment.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Sales Pipeline</h2>
+    <div class="row">
+      <div class="kpi"><div class="n">18</div><div class="l">Leads</div></div>
+      <div class="kpi"><div class="n">9</div><div class="l">Demo Scheduled</div></div>
+      <div class="kpi"><div class="n">4</div><div class="l">Onboarding</div></div>
+      <div class="kpi"><div class="n">2</div><div class="l">Live This Month</div></div>
+    </div>
+    <hr/>
+    <h2>Recent Onboarding</h2>
+    <table class="table">
+      <tr><th>Clinic</th><th>Territory</th><th>Stage</th><th>Days in Stage</th></tr>
+      <tr><td>Mountain View Vet</td><td>Pacific NW</td><td>PIMS Integration</td><td>3</td></tr>
+      <tr><td>Happy Tails Clinic</td><td>Southeast</td><td>Training Scheduled</td><td>5</td></tr>
+      <tr><td>City Pet Hospital</td><td>Midwest</td><td>Contract Signed</td><td>1</td></tr>
+    </table>
+    <p class="small">CRM pipeline feeds territory assignments and commission eligibility automatically.</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Sales');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Sales');</script>
+</body>
+</html>

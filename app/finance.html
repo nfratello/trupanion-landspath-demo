@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Finance Analyst — AR/AP, Revenue & Commissions</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Finance Analyst — AR/AP, Revenue & Commissions</div>
+          <div class="small">Revenue recognition, commission calculations, and financial reporting.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Monthly Revenue Summary</h2>
+    <div class="row">
+      <div class="kpi"><div class="n">$1.2M</div><div class="l">MRR (Active Subscriptions)</div></div>
+      <div class="kpi"><div class="n">$42K</div><div class="l">Commissions Due</div></div>
+      <div class="kpi"><div class="n">97.2%</div><div class="l">Collection Rate</div></div>
+    </div>
+    <hr/>
+    <h2>Commission Breakdown</h2>
+    <table class="table">
+      <tr><th>Territory</th><th>Active Subs</th><th>Commission Rate</th><th>Amount</th><th>Status</th></tr>
+      <tr><td>Pacific NW</td><td>312</td><td>Flat/month</td><td>$14,200</td><td><span class="tag">Ready</span></td></tr>
+      <tr><td>Southeast</td><td>287</td><td>Flat/month</td><td>$12,800</td><td><span class="tag">Ready</span></td></tr>
+      <tr><td>Midwest</td><td>198</td><td>Flat/month</td><td>$9,100</td><td><span class="tag">Pending Review</span></td></tr>
+    </table>
+    <p class="small">Save Mode accounts excluded from commission calculation. Flat monthly rate per active subscription (configurable).</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Finance Analyst');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn" onclick="Agent.act('fin_commissions')">Calculate Commissions</button>
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Finance Analyst');</script>
+</body>
+</html>

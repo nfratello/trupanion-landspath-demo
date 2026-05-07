@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Marketing — Campaigns & Customer Insights</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Marketing — Campaigns & Customer Insights</div>
+          <div class="small">Unified customer data powers segmentation, campaigns, and lifecycle engagement.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Campaign Performance</h2>
+    <div class="row">
+      <div class="kpi"><div class="n">2,400</div><div class="l">Emails Sent (This Week)</div></div>
+      <div class="kpi"><div class="n">34%</div><div class="l">Open Rate</div></div>
+      <div class="kpi"><div class="n">12%</div><div class="l">Quote Conversion</div></div>
+    </div>
+    <hr/>
+    <h2>Segments (from Unified Data)</h2>
+    <table class="table">
+      <tr><th>Segment</th><th>Size</th><th>Action</th></tr>
+      <tr><td>Lapsed Vets (no quote in 60d)</td><td>14 clinics</td><td>Re-engagement campaign</td></tr>
+      <tr><td>High-value Customers (LTV > $2K)</td><td>89 customers</td><td>Loyalty offer</td></tr>
+      <tr><td>New Vet Signups (last 30d)</td><td>6 clinics</td><td>Onboarding sequence</td></tr>
+    </table>
+    <p class="small">Segments auto-refresh from CRM + ERP subscription data. No manual list uploads needed.</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Marketing');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Marketing');</script>
+</body>
+</html>

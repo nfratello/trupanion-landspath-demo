@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Accountant — GL, Journal Entries & Reconciliation</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Accountant — GL, Journal Entries & Reconciliation</div>
+          <div class="small">General ledger postings, period close, and bank reconciliation.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Period Close — April 2026</h2>
+    <table class="table">
+      <tr><th>Task</th><th>Status</th><th>Owner</th></tr>
+      <tr><td>Revenue Recognition</td><td><span class="tag">Complete</span></td><td>Auto</td></tr>
+      <tr><td>Commission Accruals</td><td><span class="tag">Complete</span></td><td>Auto</td></tr>
+      <tr><td>Inventory Valuation</td><td><span class="warn">In Progress</span></td><td>Ops → Finance</td></tr>
+      <tr><td>Bank Reconciliation</td><td><span class="bad">Pending</span></td><td>Accounting</td></tr>
+    </table>
+    <hr/>
+    <h2>Recent Journal Entries</h2>
+    <table class="table">
+      <tr><th>Date</th><th>Description</th><th>Debit</th><th>Credit</th></tr>
+      <tr><td>Apr 30</td><td>Subscription Revenue — April</td><td></td><td>$1,187,400</td></tr>
+      <tr><td>Apr 30</td><td>Commission Expense</td><td>$42,100</td><td></td></tr>
+      <tr><td>Apr 30</td><td>COGS — Raw Materials</td><td>$298,000</td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Accountant');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Accountant');</script>
+</body>
+</html>

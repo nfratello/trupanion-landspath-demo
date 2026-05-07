@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>ERP Developer — Extensions & Integrations</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">ERP Developer — Extensions & Integrations</div>
+          <div class="small">Configure-not-customize: table extensions, Power Automate flows, and API integrations.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Configuration Surface (not custom code)</h2>
+    <table class="table">
+      <tr><th>Area</th><th>Method</th><th>Example</th></tr>
+      <tr><td>Change Window</td><td>Parameter table</td><td>Days before shipment = 7</td></tr>
+      <tr><td>Margin Profiles</td><td>Configuration page</td><td>API category margin %</td></tr>
+      <tr><td>Commission Rules</td><td>Rule engine</td><td>Flat/month per active sub</td></tr>
+      <tr><td>Routing</td><td>Workflow config</td><td>Change → Vet approval → Ops</td></tr>
+      <tr><td>DUR Integration</td><td>API connector</td><td>PIMS → DUR service → result</td></tr>
+    </table>
+    <hr/>
+    <h2>Integration Map</h2>
+    <table class="table">
+      <tr><th>Source</th><th>Target</th><th>Method</th><th>Frequency</th></tr>
+      <tr><td>PIMS</td><td>Vet Portal</td><td>API (real-time)</td><td>On-demand</td></tr>
+      <tr><td>ERP Orders</td><td>MES</td><td>Event-driven</td><td>Real-time</td></tr>
+      <tr><td>MES QC</td><td>ERP Inventory</td><td>Event-driven</td><td>Real-time</td></tr>
+      <tr><td>Stripe</td><td>ERP AR</td><td>Webhook</td><td>Real-time</td></tr>
+    </table>
+    <p class="small">Zero custom AL code for core business rules — all configured through standard D365 extension patterns.</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('ERP Developer');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('ERP Developer');</script>
+</body>
+</html>

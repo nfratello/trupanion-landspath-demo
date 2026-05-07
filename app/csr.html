@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>CSR (Call Center) — Change Requests & Save Mode</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">CSR (Call Center) — Change Requests & Save Mode</div>
+          <div class="small">Handle customer calls: changes, cancellations, save mode, and escalations.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Active Call — Customer: Alex P. (Milo)</h2>
+    <table class="table">
+      <tr><th>Field</th><th>Current</th><th>Requested</th></tr>
+      <tr><td>Protein</td><td>Chicken</td><td>Turkey</td></tr>
+      <tr><td>Nutraceutical</td><td>Skin & Coat</td><td>Joint Support</td></tr>
+      <tr><td>Calories</td><td>1000/day</td><td>1100/day</td></tr>
+    </table>
+    <p class="small">Change window: 7 days before next shipment (configurable). Current window: <b>Open</b>.</p>
+    <hr/>
+    <h2>Account Health</h2>
+    <table class="table">
+      <tr><th>Metric</th><th>Value</th></tr>
+      <tr><td>Payment Status</td><td><span class="tag">Current</span></td></tr>
+      <tr><td>Lifetime Value</td><td>$1,247</td></tr>
+      <tr><td>Months Active</td><td>14</td></tr>
+      <tr><td>Save Mode History</td><td>None</td></tr>
+    </table>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('CSR Call Center');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn" onclick="Agent.act('csr_change')">Submit Change Request</button>
+      <button class="btn" onclick="Agent.act('csr_save_mode')">Activate Save Mode</button>
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('CSR Call Center');</script>
+</body>
+</html>

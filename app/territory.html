@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Territory Partner — Engagement & Commissions</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Territory Partner — Engagement & Commissions</div>
+          <div class="small">Territory reps track vet engagement, active subscriptions, and commission statements.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>My Territory — Pacific NW</h2>
+    <div class="row">
+      <div class="kpi"><div class="n">48</div><div class="l">Active Vet Clinics</div></div>
+      <div class="kpi"><div class="n">312</div><div class="l">Active Subscriptions</div></div>
+      <div class="kpi"><div class="n">$14,200</div><div class="l">Commission This Month</div></div>
+    </div>
+    <hr/>
+    <h2>Vet Engagement</h2>
+    <table class="table">
+      <tr><th>Clinic</th><th>Quotes (30d)</th><th>Conversions</th><th>Trend</th></tr>
+      <tr><td>Riverside Animal Hospital</td><td>24</td><td>18 (75%)</td><td>↑</td></tr>
+      <tr><td>Greenfield Vet</td><td>12</td><td>6 (50%)</td><td>→</td></tr>
+      <tr><td>Paws & Claws Clinic</td><td>3</td><td>1 (33%)</td><td><span class="warn">↓ Needs outreach</span></td></tr>
+    </table>
+    <p class="small">Commission: flat monthly rate per active subscription. Save Mode accounts excluded.</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Territory Partner');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Territory Partner');</script>
+</body>
+</html>

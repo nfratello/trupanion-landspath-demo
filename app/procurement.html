@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Buyer / Procurement — Blanket POs & 3-Way Match</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Buyer / Procurement — Blanket POs & 3-Way Match</div>
+          <div class="small">Approved supplier management, blanket POs, receiving, and invoice matching.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Blanket Purchase Orders</h2>
+    <table class="table">
+      <tr><th>Supplier</th><th>Material</th><th>Qty Remaining</th><th>Expires</th><th>Status</th></tr>
+      <tr><td>NutriSource Co.</td><td>Turkey Meal (bulk)</td><td>12,000 lbs</td><td>2026-08-01</td><td><span class="tag">Active</span></td></tr>
+      <tr><td>VitaBlend Inc.</td><td>Joint Support Premix</td><td>3,400 units</td><td>2026-06-15</td><td><span class="warn">Low Stock Alert</span></td></tr>
+      <tr><td>PackRight</td><td>Custom Bags (5lb)</td><td>28,000</td><td>2026-12-31</td><td><span class="tag">Active</span></td></tr>
+    </table>
+    <hr/>
+    <h2>3-Way Match Status</h2>
+    <table class="table">
+      <tr><th>Invoice</th><th>PO</th><th>Receiving</th><th>Match</th></tr>
+      <tr><td>INV-9921</td><td>PO-4401</td><td>RCV-4401</td><td><span class="tag">✓ Matched</span></td></tr>
+      <tr><td>INV-9934</td><td>PO-4412</td><td>RCV-4412</td><td><span class="bad">Qty Variance</span></td></tr>
+    </table>
+    <p class="small">Transmission: Email/EDI (configurable per supplier). Receiving docs auto-generated from shipment confirmation.</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Procurement');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn" onclick="Agent.act('proc_blanketpo')">Create Blanket PO</button>
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Procurement');</script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Operations — Schedule → QC → Ship</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Operations — Schedule → QC → Ship</div>
+          <div class="small">Production scheduling, quality control, and shipment tracking (MES integration).</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Today's Production Queue</h2>
+    <div class="row">
+      <div class="kpi"><div class="n">847</div><div class="l">Orders Due Today</div></div>
+      <div class="kpi"><div class="n">12</div><div class="l">QC Holds</div></div>
+      <div class="kpi"><div class="n">3</div><div class="l">Remakes Queued</div></div>
+    </div>
+    <hr/>
+    <h2>Scheduling Rules (Configured)</h2>
+    <table class="table">
+      <tr><th>Rule</th><th>Value</th><th>Override</th></tr>
+      <tr><td>Priority</td><td>Due-today first</td><td>Manual bump</td></tr>
+      <tr><td>Batch Size</td><td>Optimized by protein type</td><td>Configurable</td></tr>
+      <tr><td>Freshness</td><td>"Do Not Produce Before" = ship date − 2 days</td><td>Per-product</td></tr>
+    </table>
+    <hr/>
+    <h2>QC Failures</h2>
+    <table class="table">
+      <tr><th>Order</th><th>Issue</th><th>Action</th></tr>
+      <tr><td>#ORD-4421</td><td>Weight variance > 5%</td><td><span class="warn">Remake queued</span></td></tr>
+      <tr><td>#ORD-4398</td><td>Label mismatch</td><td><span class="bad">Hold for review</span></td></tr>
+    </table>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Operations');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn" onclick="Agent.act('ops_schedule')">Optimize Schedule</button>
+      <button class="btn" onclick="Agent.act('ops_qc_requeue')">Re-queue QC Failure</button>
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Operations');</script>
+</body>
+</html>

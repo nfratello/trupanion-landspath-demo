@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Vet Portal — Quote → DUR → Order</title>
+  <link rel="stylesheet" href="assets/style.css"/>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <div class="row" style="justify-content:space-between">
+      <div class="brand">
+        <div style="width:34px;height:34px;border-radius:10px;border:1px solid rgba(58,93,174,.2);display:grid;place-items:center;background:rgba(58,93,174,.1)">🧭</div>
+        <div>
+          <div style="font-weight:800">Vet Portal — Quote → DUR → Order</div>
+          <div class="small">Frictionless quote generation with PIMS prefill + calorie calc + DUR + SMS quote delivery.</div>
+        </div>
+      </div>
+      <div class="row">
+        <span class="pill"><span class="dot"></span>Unified Platform</span>
+        <span class="pill"><span class="dot"></span>Configure not Customize</span>
+        <span class="pill"><span class="dot"></span>AI & Agents Built In</span>
+        <a class="btn secondary" href="../index.html">Home</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap split">
+  <div class="card">
+    <h2>Quote Builder (configured dropdowns, minimal typing)</h2>
+    <p>Pre-populated pet/owner/meds. Defaults suggested; vet can override (target weight, calories, flavors, nutraceuticals, APIs).</p>
+    <table class="table">
+      <tr><th>Pet</th><th>Defaults</th><th>Overrides</th><th>Status</th></tr>
+      <tr><td>Bella (Dog)</td><td>Protein: Turkey • Flavor: Default • Nutraceuticals: Default</td><td>Target Weight • Calories</td><td><span class="tag">Quote Pending</span></td></tr>
+    </table>
+    <hr/>
+    <h2>Client Dashboard (snapshot)</h2>
+    <table class="table">
+      <tr><th>Customer</th><th>Pet</th><th>Order Status</th><th>Pending</th><th>Next Action</th></tr>
+      <tr><td>Jamie R.</td><td>Bella</td><td>Quote Pending</td><td>—</td><td>Follow up via SMS</td></tr>
+      <tr><td>Alex P.</td><td>Milo</td><td>Active</td><td>Change request</td><td>Approve/deny change</td></tr>
+    </table>
+    <p class="small">Configured rules: quote expiry, change window, API margin profiles, product availability gating.</p>
+  </div>
+
+  <div class="card agent">
+    <div class="head">
+      <div>
+        <div style="font-weight:800">Copilot Agent</div>
+        <div class="small">Next-best actions • validation • audit trail</div>
+      </div>
+      <button class="btn secondary" onclick="document.getElementById('agentLog').innerHTML=''; Agent.seedAgent('Vet Portal — Quote → DUR → Order');">Reset</button>
+    </div>
+    <hr/>
+    <div id="agentLog" class="log"></div>
+    <div class="actions">
+      <button class="btn" onclick="Agent.act('vet_prefill')">Prefill from PIMS</button>
+      <button class="btn" onclick="Agent.act('vet_calories')">Calculate Calories</button>
+      <button class="btn" onclick="Agent.act('vet_dur')">Run DUR</button>
+      <button class="btn" onclick="Agent.act('vet_send_sms')">Send Quote via SMS</button>
+      <button class="btn secondary" onclick="Agent.act('arch_unified')">Show Unified Platform Flow</button>
+    </div>
+    <p class="small" style="margin-top:10px">
+      Note: This is a mock agent (no external calls). In production, this is where Microsoft Copilot + Agents connect across CRM/ERP/MES.
+    </p>
+  </div>
+</div>
+
+<script src="assets/agent.js"></script>
+<script>Agent.seedAgent('Vet Portal — Quote → DUR → Order');</script>
+</body>
+</html>
